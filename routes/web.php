@@ -25,9 +25,15 @@ Route::put('update-job/{id_job}', 'JobsController@update');
 Route::get('delete-job/{id}', 'JobsController@delete');
 
 //Profiles
+Route::middleware(['auth'])->group(function(){
 Route::get('profiles', 'ProfilesController@index');
 Route::get('/add-profile', 'ProfilesController@create');
 Route::post('store-profile','ProfilesController@store');
 Route::get('/edit-profile/{id_job}','ProfilesController@edit');
 Route::put('update-profile/{id_job}', 'ProfilesController@update');
 Route::get('delete-profile/{id}', 'ProfilesController@delete');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
