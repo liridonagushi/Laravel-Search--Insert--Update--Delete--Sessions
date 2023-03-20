@@ -13,8 +13,6 @@ class PagesController extends Controller
     }
 
     public function about(){
-        // $title = "About Us Page controller";
-        // $body = "Body Page controller";
         return view('pages.about');
     }
 
