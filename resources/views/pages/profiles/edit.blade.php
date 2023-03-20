@@ -22,27 +22,32 @@
             @endif
 
             <div class="card-body">
-                <form action ="{{ url('update-job/'.$job->id) }}" method="POST">
+                <form action ="{{ url('update-profile/'.$profile->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group mb-3">
-                        <label for="">Job Code</label>
-                        <input type="text" name="job_code" value="{{ $job->job_code }}" class="form-control">
+                        <label for="">Full Name</label>
+                        <input type="text" name="name" value="{{ $profile->name }}" class="form-control">
                     </div>
 
                     <div class="form-group mb-3">
-                        <label for="">Job Title</label>
-                        <input type="text" name="job_title" value="{{ $job->job_title }}"  class="form-control">
+                        <label for="">Address</label>
+                        <input type="text" name="address" value="{{ $profile->address }}"  class="form-control">
                     </div>
                     
-                     <div class="form-group mb-3">
-                        <label for="">Description</label>
-                        <textarea name="description" class="form-control" rows="3">{!!   $job->description !!}</textarea>
+                    <div class="form-group mb-3">
+                        <label for="">City</label>
+                        <input type="text" name="city" value="{{ $profile->city }}"  class="form-control">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="">Image (File Upload)</label>
+                        <input type="file" name="image" class="form-control" >
                     </div>
 
                     <div class="form-group mb-3">
                         <label for="">Status</label>
-                        <input type="checkbox" name="active" {{ $job->active == 1 ? 'checked':''}} >
+                        <input type="checkbox" name="active" {{ $profile->active == 1 ? 'checked':''}} >
                     </div>
 
                     <div class="form-group mb-3">

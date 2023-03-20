@@ -1,0 +1,70 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               5.7.16-log - MySQL Community Server (GPL)
+-- Server OS:                    Win64
+-- HeidiSQL Version:             9.5.0.5295
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+-- Dumping database structure for laravel_jobs
+CREATE DATABASE IF NOT EXISTS `laravel_jobs` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `laravel_jobs`;
+
+-- Dumping structure for table laravel_jobs.jobs
+CREATE TABLE IF NOT EXISTS `jobs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `job_code` varchar(50) DEFAULT NULL,
+  `job_title` varchar(50) DEFAULT NULL,
+  `description` varchar(50) DEFAULT NULL,
+  `created_at` varchar(100) DEFAULT NULL,
+  `updated_at` varchar(100) DEFAULT NULL,
+  `active` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table laravel_jobs.jobs: ~13 rows (approximately)
+/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
+INSERT IGNORE INTO `jobs` (`id`, `job_code`, `job_title`, `description`, `created_at`, `updated_at`, `active`) VALUES
+	(1, '123', 'Title', 'Description', NULL, NULL, 1),
+	(2, '1234', 'Title1', 'Description1', NULL, NULL, 1),
+	(3, '1234', 'Title1', 'Description1', NULL, NULL, 1),
+	(4, '1234', 'Title1', 'Description1', NULL, NULL, 1),
+	(5, '1234', 'Title1', 'Description1', NULL, NULL, 1),
+	(6, '567', 'Title1', 'Description1', NULL, NULL, 1),
+	(7, '789', 'Title1', 'Description1', NULL, NULL, 1),
+	(8, '101112', 'Title1', 'Description1', NULL, NULL, 1),
+	(9, 'Csharp_1', 'Developer required', NULL, '2023-03-20 14:29:25', '2023-03-20 14:29:25', NULL),
+	(10, 'Csharp_1', 'Developer required', NULL, '2023-03-20 14:31:48', '2023-03-20 14:31:48', NULL),
+	(11, 'Csharp_1', 'Developer required', NULL, '2023-03-20 14:32:42', '2023-03-20 14:32:42', NULL),
+	(12, 'Csharp_1', 'Developer required', NULL, '2023-03-20 14:32:46', '2023-03-20 15:57:19', 0),
+	(13, 'Csharp_1', 'Developer required', NULL, '2023-03-20 14:34:20', '2023-03-20 14:34:20', NULL);
+/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
+
+-- Dumping structure for table laravel_jobs.profiles
+CREATE TABLE IF NOT EXISTS `profiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `active` tinyint(4) DEFAULT NULL,
+  `image` varchar(200) DEFAULT NULL,
+  `created_at` varchar(50) DEFAULT NULL,
+  `updated_at` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table laravel_jobs.profiles: ~2 rows (approximately)
+/*!40000 ALTER TABLE `profiles` DISABLE KEYS */;
+INSERT IGNORE INTO `profiles` (`id`, `name`, `address`, `city`, `active`, `image`, `created_at`, `updated_at`) VALUES
+	(2, 'Agushi Liridon', '60', 'Presevo', 1, '1679333848.jpg', '2023-03-20 17:01:45', '2023-03-20 17:37:28');
+/*!40000 ALTER TABLE `profiles` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

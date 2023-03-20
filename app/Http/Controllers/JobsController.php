@@ -10,7 +10,6 @@ class JobsController extends Controller
 {
     public function index(Request $request){
 
-
         // $jobs=Searchjobs::all();
         $search=$request->input('search_key');
         if(($search!="") || (isset($_GET['search_key']))){
@@ -54,12 +53,12 @@ class JobsController extends Controller
         $job->active=$request->input('active')==true ? 1:0;
         $job->update();
 
-        return redirect('jobs')->with('status', 'job updated');
+        return redirect('jobs')->with('status', 'Job updated');
     }
 
         public function delete($id){
-        $job=Job::find($id);
+        $job=Jobs::find($id);
         $job->delete();
-        return redirect('jobs')->with('status', 'Employee deleted');
+        return redirect('jobs')->with('status', 'Job deleted');
     }
 }
